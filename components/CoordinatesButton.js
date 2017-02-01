@@ -5,16 +5,17 @@ React.Component {
   constructor(props) {
     super()
 
-    this.state = {
-
-    }
-
+    this.handleClick = this.handleClick.bind(this)
   }
+
+    handleClick(event) {
+      this.props.onReceiveCoordinates([event.clientX, event.clientY])
+    }
 
 
   render() {
     return (
-      <button onClick={ (event) => {this.props.onReceiveCoordinates([event.clientX, event.clientY])}}></button>)
+      <button onClick={this.handleClick}></button>)
       }
         }
 
